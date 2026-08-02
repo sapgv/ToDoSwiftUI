@@ -2,7 +2,7 @@
 
  Список задач  | Меню| Редактирование |
 | ------------- |:-------------:|:-------------:|
-| <img width="300" height="600" alt="1" src="https://github.com/user-attachments/assets/04a581db-ddef-42a7-8245-fb20bef504ef" />      | <img width="300" height="600" alt="2" src="https://github.com/user-attachments/assets/94a26a6c-1003-44fe-bfdb-cf5429fc3a49" />     | <img width="300" height="600" alt="3" src="https://github.com/user-attachments/assets/4136752e-fd82-4d98-96ae-bc2ae6e66888" /> |
+| <img width="300" alt="1" src="https://github.com/user-attachments/assets/04a581db-ddef-42a7-8245-fb20bef504ef" />      | <img width="300" alt="2" src="https://github.com/user-attachments/assets/94a26a6c-1003-44fe-bfdb-cf5429fc3a49" />     | <img width="300"  alt="3" src="https://github.com/user-attachments/assets/4136752e-fd82-4d98-96ae-bc2ae6e66888" /> |
 
 ## Установка
 * Скачать проект
