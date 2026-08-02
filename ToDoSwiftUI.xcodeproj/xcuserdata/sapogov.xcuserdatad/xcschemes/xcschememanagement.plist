@@ -7,7 +7,20 @@
 		<key>ToDoSwiftUI.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>10</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>105A2CE43018B03000D71AE5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>10F1673E301E417500272BAE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

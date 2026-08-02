@@ -8,6 +8,7 @@
 import Foundation
 import CoreData
 
+// sourcery: AutoMockable
 protocol TodoStorageProtocol: AnyObject {
     func fetchCount() async throws -> Int
     func insertItems(items: [TodoItem]) async throws

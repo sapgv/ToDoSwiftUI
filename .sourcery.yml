@@ -1,0 +1,12 @@
+sources:
+  - ToDoSwiftUI
+templates:
+  - ToDoSwiftUITests/Templates/
+output:
+    ToDoSwiftUITests/AutoMockable.generated.swift
+args:
+  app: ToDoSwiftUI
+  autoMockableImports:
+    - CoreData
+  autoMockableTestableImports:
+    - ToDoSwiftUI

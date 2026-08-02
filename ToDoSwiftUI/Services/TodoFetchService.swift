@@ -7,15 +7,21 @@
 
 import Foundation
 
+// sourcery: AutoMockable
 protocol TodoFetchServiceProtocol: AnyObject {
     func fetch() async throws -> [TodoItem]
 }
 
 final class TodoFetchService {
-    private let decoder: JSONDecoder
+    private let decoder: DecoderProtocol
+    private let networkClient: NetworkClientProtocol
     
-    init(decoder: JSONDecoder = .init()) {
+    init(
+        decoder: DecoderProtocol = JSONDecoder(),
+        networkClient: NetworkClientProtocol = URLSession.shared
+    ) {
         self.decoder = decoder
+        self.networkClient = networkClient
     }
 }
 
@@ -26,7 +32,7 @@ extension TodoFetchService: TodoFetchServiceProtocol {
         }
         do {
             let request = URLRequest(url: url)
-            let (data, _) = try await URLSession.shared.data(for: request)
+            let (data, _) = try await networkClient.data(for: request)
             let result = try decoder.decode(FetchResult.self, from: data)
             return result.todos
         }
@@ -36,17 +42,9 @@ extension TodoFetchService: TodoFetchServiceProtocol {
     }
 }
 
-// MARK: - Private
-
-private extension TodoFetchService {
-    struct FetchResult: Decodable {
-        let todos: [TodoItem]
-    }
-}
-
 // MARK: - Errors
 
-private extension TodoFetchService {
+extension TodoFetchService {
     enum Errors: LocalizedError {
         case fetchFailure
         var errorDescription: String? {
@@ -55,5 +53,13 @@ private extension TodoFetchService {
                 "Не удалось получить данные"
             }
         }
+    }
+}
+
+// MARK: - FetchResult
+
+extension TodoFetchService {
+    struct FetchResult: Decodable {
+        let todos: [TodoItem]
     }
 }
